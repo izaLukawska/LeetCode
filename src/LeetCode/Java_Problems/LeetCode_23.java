@@ -10,10 +10,12 @@ public class LeetCode_23 {
 		if(lists.length == 1){
 			return lists[0];
 		}
+
 		ListNode mergedArrays = mergeTwoLists(lists[0], lists[1]);
 		for(int i = 2; i < lists.length; i++){
 			mergedArrays = mergeTwoLists(mergedArrays, lists[i]);
 		}
+
 		return mergedArrays;
 	}
 
@@ -25,18 +27,20 @@ public class LeetCode_23 {
 				tempNode.next = l1;
 				l1 = l1.next;
 			}
-			else{
+			else {
 				tempNode.next = l2;
 				l2 = l2.next;
 			}
 			tempNode = tempNode.next;
 		}
+
 		if(l1 != null){
 			tempNode.next = l1;
 		}
 		if(l2 != null){
 			tempNode.next = l2;
 		}
+
 		return result.next;
 	}
 
